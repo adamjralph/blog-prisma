@@ -4,6 +4,9 @@ const prisma = new PrismaClient();
 import express, { Application } from 'express';
 const app: Application = express();
 
+// const express = require('express');
+// const app = express();
+
 const path = require('path');
 const favicon = require('serve-favicon');
 
