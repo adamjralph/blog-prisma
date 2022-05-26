@@ -1,0 +1,10 @@
+<h1>Users</h1>
+<%= JSON.stringify(allUsers[0].email) %>
+
+<h2>All Users</h2>
+
+<ul>
+  <% allUsers.forEach(function(i) { %>
+  <li><%= i.name %> - <%= i.email %></li>
+  <% }); %>
+</ul>
