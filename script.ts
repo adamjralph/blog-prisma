@@ -26,7 +26,7 @@ async function main() {
     include: { posts: true },
   });
   // use `console.dir` to print nested objects
-  console.dir(allUsers, { depth: null });
+  console.log(allUsers, { depth: null });
 }
 
 app.get('/users', async (req, res) => {
@@ -38,12 +38,12 @@ app.get('/users', async (req, res) => {
   res.render('users', { allUsers });
 });
 
-// app.get('/read', async (req, res) => {
-//   const article = await prisma.user.findMany({
-//     include: { posts: true },
-//   });
-//   res.render('read', article);
-// });
+app.get('/read', async (req, res) => {
+  const article = await prisma.user.findMany({
+    include: { posts: true },
+  });
+  res.render('read', article);
+});
 
 main()
   .catch((e) => {
